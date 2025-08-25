@@ -1,0 +1,9 @@
+[project]
+name = "s"
+version = "0.0.1"
+description = "A private URL shortener service."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "Django>=5.2.5",
+]
