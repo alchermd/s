@@ -29,6 +29,10 @@ class Link(models.Model):
 
 
 class LinkClick(models.Model):
+    class Meta:
+        verbose_name = "Click"
+        verbose_name_plural = "Clicks"
+
     link = models.ForeignKey(Link, on_delete=models.CASCADE, related_name="clicks")
     clicked_at = models.DateTimeField(verbose_name="Clicked At", auto_now_add=True)
     ip_address = models.GenericIPAddressField(
