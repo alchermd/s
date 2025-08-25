@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "links.apps.LinksConfig",
 ]
 
 MIDDLEWARE = [
@@ -120,3 +121,7 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# App-specific settings
+## How many characters long the public ID for a shortened link should be
+S_LINK_PUBLIC_ID_LENGTH = 6
