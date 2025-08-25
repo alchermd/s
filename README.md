@@ -8,5 +8,6 @@ A private URL shortener service.
 $ uv venv ./.venv
 $ source ./.venv/bin/activate
 $ uv sync
-$ python src/manage.py runserver
+$ cd src
+$ python manage.py runserver
 ```
