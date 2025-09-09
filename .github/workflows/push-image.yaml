@@ -1,4 +1,4 @@
-name: Build and Push Homepage
+name: Build and Push s
 
 on:
   push:
