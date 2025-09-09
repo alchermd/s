@@ -36,4 +36,4 @@ COPY entrypoint.sh /app/entrypoint.sh
 ENV PATH="/app/.venv/bin:$PATH"
 
 ENTRYPOINT ["/app/entrypoint.sh"]
-CMD ["gunicorn", "config.wsgi:application", "--bind", "0.0.0.0:8000"]
+CMD ["gunicorn", "src.config.wsgi:application", "--bind", "0.0.0.0:8000"]
