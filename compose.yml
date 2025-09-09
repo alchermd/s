@@ -7,6 +7,7 @@ services:
       dockerfile: Dockerfile
     command: python src/manage.py runserver 0.0.0.0:8000
     container_name: s
+    image: s:latest
     volumes:
       - ./src:/app/src
       - ./entrypoint.sh:/app/entrypoint.sh
