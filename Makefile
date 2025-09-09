@@ -7,12 +7,14 @@ MANAGE := docker compose exec web python src/manage.py
 
 help:
 	@echo "Common Django commands:"
-	@echo "  make up              # Run dev server"
-	@echo "  make shell            # Django shell"
-	@echo "  make migrate          # Apply migrations"
-	@echo "  make makemigrations   # Create migrations"
-	@echo "  make superuser        # Create a superuser"
-	@echo "  make <command>        # Run 'manage.py <command>'"
+	@echo "  make up                       # Run dev server"
+	@echo "  make shell                    # Django shell"
+	@echo "  make migrate          		   # Apply migrations"
+	@echo "  make makemigrations           # Create migrations"
+	@echo "  make superuser                # Create a superuser"
+	@echo "  make i pkg=<package name>     # Install a Python package"
+	@echo "  make idev pkg=<package name>  # Install a Python package as a dev dependency"
+	@echo "  make <command>                # Run 'manage.py <command>'"
 
 up:
 	docker compose up --build
