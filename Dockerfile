@@ -13,6 +13,11 @@ RUN pip install --no-cache-dir uv \
 
 COPY src/ ./src
 
+RUN find /app/.venv -type d -name "__pycache__" -exec rm -rf {} + \
+ && find /app/.venv -type f -name "*.pyc" -delete \
+ && rm -rf /app/.venv/lib/python*/site-packages/tests \
+ && rm -rf /root/.cache
+
 # --- Final stage ---
 FROM python:3.12-slim
 
