@@ -1,0 +1,4 @@
+# Ignore all logs
+logs/
+*.log
+.env.mk

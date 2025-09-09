@@ -1,11 +1,12 @@
 version: "3.9"
 
 services:
-  web:
+  s:
     build:
       context: .
       dockerfile: Dockerfile
     command: python src/manage.py runserver 0.0.0.0:8000
+    container_name: s
     volumes:
       - ./src:/app/src
       - ./entrypoint.sh:/app/entrypoint.sh
