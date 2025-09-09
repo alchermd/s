@@ -5,7 +5,7 @@ REGISTRY := registry.digitalocean.com/alcher-dev-registry
 IMAGE_LATEST := $(REGISTRY)/$(APP_NAME):latest
 IMAGE_UNIQUE := $(REGISTRY)/$(APP_NAME):$(shell git rev-parse --short HEAD)
 DC := docker compose
-MANAGE := $(DC) exec web python src/manage.py
+MANAGE := $(DC) exec s python src/manage.py
 
 .PHONY: help run shell migrate makemigrations superuser
 
@@ -50,10 +50,10 @@ superuser:
 	$(MANAGE) createsuperuser
 
 i:
-	$(DC) exec web uv add $(pkg)
+	uv add $(pkg)
 
 idev:
-	$(DC) exec web uv add --dev $(pkg)
+	uv add --dev $(pkg)
 
 # Catch-all: forward any unknown target to manage.py
 %:
