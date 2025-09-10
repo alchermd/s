@@ -16,5 +16,5 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Push Homepage Image
+      - name: Push s Image
         run: make push
