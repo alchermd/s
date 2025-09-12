@@ -4,14 +4,13 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('links', '0001_create_link_and_link_click_models'),
+        ("links", "0001_create_link_and_link_click_models"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='linkclick',
-            options={'verbose_name': 'Click', 'verbose_name_plural': 'Clicks'},
+            name="linkclick",
+            options={"verbose_name": "Click", "verbose_name_plural": "Clicks"},
         ),
     ]
