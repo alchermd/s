@@ -22,6 +22,7 @@ from pages import views as pages_views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("", pages_views.index, name="index"),
     path("", include("links.urls")),
 ]
 
