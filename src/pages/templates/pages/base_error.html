@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Error{% endblock %}</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      text-align: center;
+      padding: 10% 2rem;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      margin: 0.5rem 0 2rem;
+      color: #666;
+    }
+    a {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      border: 1px solid #333;
+      border-radius: 4px;
+      text-decoration: none;
+      color: #333;
+      font-size: 0.9rem;
+    }
+    a:hover {
+      background: #333;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  {% block content %}{% endblock %}
+</body>
+</html>
