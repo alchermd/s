@@ -35,5 +35,17 @@ COPY entrypoint.sh /app/entrypoint.sh
 
 ENV PATH="/app/.venv/bin:$PATH"
 
+# Create log files
+RUN mkdir -p /app/src/logs
+RUN touch /app/src/logs/gunicorn-access.log
+RUN touch /app/src/logs/gunicorn-error.log
+
 ENTRYPOINT ["/app/entrypoint.sh"]
-CMD ["gunicorn", "--chdir", "/app/src", "config.wsgi:application", "--bind", "0.0.0.0:8000"]
+CMD [
+    "gunicorn",
+     "--chdir", "/app/src",
+     "--access-logfile", "/app/src/logs/gunicorn-access.log",
+     "--error-logfile", "/app/src/logs/gunicorn-error.log",
+     "config.wsgi:application",
+     "--bind", "0.0.0.0:8000"
+]
