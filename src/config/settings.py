@@ -28,6 +28,9 @@ DEBUG = int(os.environ["DEBUG"])
 
 ALLOWED_HOSTS = os.environ["ALLOWED_HOSTS"].split(" ")
 
+# Determine if we are in production mode
+# There should be a better way to do this, but for now not running in debug mode is good enough
+PROD = not DEBUG
 
 # Application definition
 
@@ -143,6 +146,13 @@ LOGGING = {
         "level": "WARNING",
     },
 }
+
+# Security settings
+if PROD:
+    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
 
 # App-specific settings
 ## How many characters long the public ID for a shortened link should be
